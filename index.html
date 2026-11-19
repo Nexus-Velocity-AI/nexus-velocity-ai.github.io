@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nexus Velocity IA — Orquestación multiagente con control humano</title>
+  <meta name="description" content="Plataforma de orquestación multiagente con modelos locales (Ollama), n8n y Docker, con aprobaciones humanas firmadas, control de acceso y auditoría.">
+  <meta property="og:title" content="Nexus Velocity IA">
+  <meta property="og:description" content="Orquestación multiagente con control humano, modelos locales y auditoría.">
+  <meta property="og:image" content="assets/nexus-logo.jpg">
+  <link rel="stylesheet" href="portfolio/styles.css">
+  <style>.logo{width:100%;max-height:340px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-top:1.5rem}</style>
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#inicio">NV</a>
+  <nav aria-label="Principal"><a href="#que-es">Qué es</a><a href="#como">Cómo funciona</a><a href="#estado">Estado</a><a href="#apoyo">Apoyo</a><a href="portfolio/index.html">Portafolio del autor</a></nav>
+  <button id="theme" aria-label="Cambiar entre modo claro y oscuro">◐</button>
+</header>
+<main>
+<section id="inicio" class="hero">
+  <p class="eyebrow">Proyecto personal · en modo controlado</p>
+  <h1>Nexus Velocity IA</h1>
+  <p class="role">Orquestación multiagente con control humano</p>
+  <p class="lead">Una plataforma que coordina 11 agentes de IA con modelos locales, n8n y Docker, y que exige aprobación humana firmada antes de cualquier acción con efecto externo.</p>
+  <div class="cta"><a class="btn primary" href="docs/arquitectura.html">Ver la arquitectura</a><a class="btn" href="#apoyo">Apoyar el proyecto</a></div>
+  <img class="logo" src="assets/nexus-logo.jpg" alt="Logotipo de Nexus Velocity AI">
+</section>
+
+<section id="que-es" class="reveal">
+  <h2>Qué es</h2>
+  <p>Nexus Velocity IA automatiza trabajo de negocio (análisis, redacción, validación, marketing, ventas, seguridad, auditoría) repartiéndolo entre agentes especializados. Corre en infraestructura propia, con modelos locales vía Ollama, para mantener los datos bajo control.</p>
+  <p>La idea central es sencilla: <strong>los agentes proponen, las personas aprueban</strong>.</p>
+</section>
+
+<section id="como" class="reveal">
+  <h2>Cómo funciona</h2>
+  <div class="grid">
+    <article class="card"><h3>11 agentes</h3><p>Cada uno con su política y su alcance, activados por fases.</p></article>
+    <article class="card"><h3>Puerta de acciones críticas</h3><p>Componente determinista, sin LLM. Publicar, enviar o desplegar exige una aprobación humana firmada, de un solo uso y con caducidad.</p></article>
+    <article class="card"><h3>Aislamiento y acceso</h3><p>Servicios internos solo en red local y acceso remoto con control de identidad. Todo falla cerrado.</p></article>
+    <article class="card"><h3>Auditoría</h3><p>Auditorías documentadas, copia previa y reversión de cada cambio, monitor de solo lectura y pruebas automatizadas.</p></article>
+  </div>
+  <p class="note">Más detalle: <a href="docs/arquitectura.html">arquitectura</a> · <a href="docs/seguridad.html">seguridad</a> · <a href="docs/roadmap.html">roadmap</a> · <a href="docs/uso.html">uso</a>.</p>
+</section>
+
+<section id="estado" class="reveal">
+  <h2>Estado</h2>
+  <p>Proyecto personal en <strong>modo controlado</strong>: la delegación a agentes y las integraciones externas están desactivadas por diseño hasta que se aprueben una a una. No es un servicio público ni tiene demo abierta, y no ha tenido una auditoría de terceros. Este sitio publica solo documentación; el código y los datos permanecen privados.</p>
+</section>
+
+<section id="apoyo" class="reveal">
+  <h2>Apoyo</h2>
+  <p>Busco apoyo para seguir desarrollando el proyecto: financiación, colaboración técnica, feedback o visibilidad. Todavía no hay una vía de pago pública; si quieres apoyar o colaborar, escríbeme y lo acordamos directamente.</p>
+  <ul class="contact">
+    <li><a href="mailto:sdannyandres@gmail.com?subject=Apoyo%20a%20Nexus%20Velocity%20IA">sdannyandres@gmail.com</a></li>
+    <li><a href="https://github.com/sdannyandres" rel="noopener">GitHub del autor</a></li>
+    <li><a href="portfolio/index.html">Portafolio del autor</a></li>
+  </ul>
+</section>
+</main>
+<footer><p>© <span id="y"></span> Danny Andrés Salazar · Nexus Velocity IA</p></footer>
+<script src="portfolio/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+:root{--bg:#0b1020;--fg:#e8ecf6;--muted:#9aa6c3;--card:#121a30;--line:#222c4a;--accent:#5eead4;--accent2:#7c9cff}
+[data-theme="light"]{--bg:#f7f8fc;--fg:#10162b;--muted:#566083;--card:#fff;--line:#e0e4f1;--accent:#0f766e;--accent2:#3b4fd8}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f7f8fc;--fg:#10162b;--muted:#566083;--card:#fff;--line:#e0e4f1;--accent:#0f766e;--accent2:#3b4fd8}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:1rem;padding:.8rem 1.2rem;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{font-weight:800;letter-spacing:.05em;color:var(--fg)}
+.nav nav{display:flex;gap:1.1rem;margin-left:auto;flex-wrap:wrap}
+.nav nav a{color:var(--muted);font-size:.95rem}.nav nav a:hover{color:var(--fg);text-decoration:none}
+#theme{background:none;border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:.25rem .55rem;cursor:pointer;font-size:1rem}
+main{max-width:1000px;margin:0 auto;padding:0 1.2rem}
+section{padding:4.5rem 0 1rem}
+h1{font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.1;margin:.2rem 0}
+h2{font-size:1.8rem;margin:0 0 1.2rem;border-left:4px solid var(--accent);padding-left:.7rem}
+h3{margin:.2rem 0 .4rem}
+.hero{padding-top:6rem}.eyebrow{color:var(--accent);margin:0;font-weight:600}
+.role{font-size:1.25rem;color:var(--accent2);font-weight:600;margin:.3rem 0 1rem}
+.lead{max-width:680px;color:var(--muted)}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0}
+.btn{display:inline-block;padding:.7rem 1.3rem;border:1px solid var(--line);border-radius:10px;color:var(--fg);font-weight:600;transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent);text-decoration:none}
+.btn.primary{background:var(--accent);color:#06201d;border-color:var(--accent)}
+.quick{list-style:none;display:flex;gap:1.2rem;padding:0;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.2rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent2)}
+.thumb{height:90px;border-radius:10px;display:grid;place-items:center;font-size:2rem;font-weight:800;color:#fff;margin-bottom:.8rem}
+.t1{background:linear-gradient(135deg,#4f46e5,#06b6d4)}.t2{background:linear-gradient(135deg,#0ea5e9,#7c3aed)}.t3{background:linear-gradient(135deg,#059669,#0891b2)}.t4{background:linear-gradient(135deg,#d97706,#db2777)}.t5{background:linear-gradient(135deg,#475569,#2563eb)}
+.status{color:var(--accent);font-size:.85rem;margin:0 0 .5rem}.stack{color:var(--muted);font-size:.9rem}.links{font-size:.9rem;color:var(--muted)}
+.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--line)}
+.timeline li{display:grid;grid-template-columns:150px 1fr;gap:1rem;padding:0 0 1.4rem 1.2rem;position:relative}
+.timeline li::before{content:"";position:absolute;left:-6px;top:.6rem;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.when{color:var(--muted);font-size:.9rem}.note{color:var(--muted)}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:.3rem 0 1rem}
+.chips li{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.25rem .8rem;font-size:.9rem}
+.contact{list-style:none;padding:0;display:flex;gap:1.5rem;flex-wrap:wrap}
+footer{max-width:1000px;margin:3rem auto 0;padding:1.5rem 1.2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.reveal.in{opacity:1;transform:none}
+@media(max-width:640px){.timeline li{grid-template-columns:1fr}.nav nav{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}

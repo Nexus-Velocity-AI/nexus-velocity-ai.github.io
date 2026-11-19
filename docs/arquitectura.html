@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Arquitectura — Nexus Velocity IA</title><link rel="stylesheet" href="../portfolio/styles.css"><body><main style="padding-top:2rem"><p><a href="../index.html">← Nexus Velocity IA</a></p><h1>Arquitectura</h1>
+<p>Nexus Velocity IA es una plataforma propia de <strong>orquestación multiagente</strong> para automatizar trabajo de negocio con control humano. Este documento describe el diseño. No contiene código interno.</p>
+<h2>Componentes</h2>
+<table>
+<thead>
+<tr>
+<th>Capa</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orquestador</td>
+<td>Recibe una solicitud, la clasifica y decide a qué agente enrutarla</td>
+</tr>
+<tr>
+<td>11 agentes</td>
+<td>Búsqueda, análisis, redacción, validación, legal, marketing, ventas, desarrollo, seguridad, auditoría y orquestador. Cada uno tiene su política</td>
+</tr>
+<tr>
+<td>Puerta de acciones críticas</td>
+<td>Componente determinista, <strong>sin LLM</strong>, que autoriza o deniega acciones con efecto externo</td>
+</tr>
+<tr>
+<td>Automatización</td>
+<td>n8n en contenedores Docker para flujos y webhooks</td>
+</tr>
+<tr>
+<td>Plataforma</td>
+<td>Servicio en Bun/TypeScript con API interna autenticada</td>
+</tr>
+<tr>
+<td>Modelos</td>
+<td>Endpoint local con Ollama</td>
+</tr>
+<tr>
+<td>Memoria</td>
+<td>Almacén local en SQLite, con enmascarado de datos personales (desactivada por defecto)</td>
+</tr>
+</tbody>
+</table>
+<h2>Flujo</h2>
+<pre><code class="language-mermaid">flowchart LR
+  U[Solicitud] --&gt; O[Orquestador]
+  O --&gt; G{Puerta de acciones críticas}
+  G -- acción de solo lectura --&gt; A[Agentes de análisis]
+  G -- acción crítica + aprobación humana válida --&gt; X[Ejecución controlada]
+  G -- sin aprobación --&gt; D[Denegado y registrado]
+</code></pre>
+<h2>Acciones críticas</h2>
+<p>Publicar contenido, enviar correos, mensajes o llamadas, activar pagos, cambiar infraestructura, desplegar código, gastar créditos externos, borrar datos y activar agentes o flujos. <strong>Toda acción desconocida se deniega.</strong></p>
+<h2>Aprobación humana</h2>
+<p>Una aprobación es un objeto firmado con HMAC-SHA256, de <strong>un solo uso</strong>, con <strong>caducidad</strong> corta y emitido por una persona distinta de quien solicita. Un agente nunca puede aprobar.</p>
+<h2>Activación por fases</h2>
+<p>Los agentes se activan de forma gradual. Hoy la plataforma opera en <strong>modo controlado</strong>: la delegación a agentes y las integraciones externas permanecen desactivadas hasta aprobación explícita.</p></main></body></html>
