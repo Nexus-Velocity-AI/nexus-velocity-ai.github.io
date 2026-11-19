@@ -1,108 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Danny Andrés Salazar — Blockchain & Full-Stack Engineer | IA, Automatización y Web3</title>
-  <meta name="description" content="Ingeniero blockchain y full-stack. Smart contracts en Solidity, automatización con n8n y Docker, orquestación multiagente con modelos locales.">
-  <meta property="og:title" content="Danny Andrés Salazar — Blockchain & Full-Stack Engineer">
-  <meta property="og:description" content="IA, Automatización y Web3. Solidity, EVM, Node.js, Docker, n8n.">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="styles.css">
-  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danny Andrés Salazar — Blockchain & Full-Stack Engineer | IA, Automatización y Web3</title>
+<meta name="description" content="Ayudo a empresas y emprendedores a automatizar procesos, construir páginas web y aplicar IA de forma segura. Solidity, EVM, Node.js, Docker, n8n, Ollama.">
+<meta property="og:title" content="Danny Andrés Salazar — Blockchain & Full-Stack Engineer">
+<meta property="og:description" content="Automatización, páginas web, IA local y Web3.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070b16">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1020'/%3E%3Ctext x='32' y='42' font-size='30' text-anchor='middle' fill='%235eead4' font-family='sans-serif' font-weight='800'%3EDS%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
+<div id="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Saltar al contenido</a>
 <header class="nav">
-  <a class="brand" href="#inicio">DS</a>
-  <nav aria-label="Principal">
-    <a href="#sobre-mi">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#experiencia">Experiencia</a><a href="#stack">Stack</a><a href="#contacto">Contacto</a>
+  <a class="brand" href="#inicio" aria-label="Inicio"><span>DS</span></a>
+  <button id="menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <nav id="links" aria-label="Principal">
+    <a href="#sobre-mi">Sobre mí</a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#experiencia">Experiencia</a><a href="#stack">Stack</a><a href="#trabaja-conmigo" class="pill">Trabaja conmigo</a>
   </nav>
   <button id="theme" aria-label="Cambiar entre modo claro y oscuro">◐</button>
 </header>
 
-<main>
+<main id="main">
 <section id="inicio" class="hero">
-  <p class="eyebrow">Hola, soy</p>
-  <h1>Danny Andrés Salazar</h1>
-  <p class="role">Blockchain &amp; Full-Stack Engineer | IA, Automatización y Web3</p>
-  <p class="lead">Construyo smart contracts en Solidity, backends en Node.js y sistemas de automatización con Docker, n8n y modelos locales. Trabajo con un enfoque de seguridad y auditoría, para equipos que necesitan sistemas fiables y trazables.</p>
-  <div class="cta">
-    <a class="btn primary" href="#proyectos">Ver proyectos</a>
-    <span class="btn" aria-disabled="true" style="opacity:.6;cursor:default">CV disponible próximamente</span>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="eyebrow"><span class="dot"></span> Disponible para proyectos y empleo</p>
+    <h1><span class="grad">Danny Andrés</span><br>Salazar</h1>
+    <p class="role">Blockchain &amp; AI Automation Engineer | FinOps, n8n, Solidity, Docker</p>
+    <p class="lead">Ayudo a empresas y emprendedores a automatizar procesos, construir páginas web y aplicar IA de forma segura.</p>
+    <div class="cta">
+      <a class="btn primary" href="#proyectos">Ver proyectos</a>
+      <a class="btn" href="#trabaja-conmigo">Trabaja conmigo</a>
+    </div>
+    <ul class="quick">
+      <li><a href="https://github.com/sdannyandres" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/danny-andr%C3%A9s-salazar-blockchain-developer-web3-defi" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:sdannyandres@gmail.com">Email</a></li>
+    </ul>
   </div>
-  <ul class="quick">
-    <li><a href="https://github.com/sdannyandres" rel="noopener">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/danny-andr%C3%A9s-salazar-blockchain-developer-web3-defi" rel="noopener">LinkedIn</a></li>
-    <li><a href="mailto:sdannyandres@gmail.com">Email</a></li>
-  </ul>
+  <a class="scroll" href="#sobre-mi" aria-label="Bajar">↓</a>
 </section>
 
-<section id="sobre-mi" class="reveal">
-  <h2>Sobre mí</h2>
-  <p>Soy ingeniero industrial con más de 10 años en calidad aeronáutica (EN 9100 / ISO 9001). De ahí traigo el rigor en trazabilidad, auditoría y control de procesos, que ahora aplico a software.</p>
-  <p>Me formé en blockchain (Máster Blockchain Engineer, CodeCrypto Academy) y desarrollo en Solidity y Node.js. Mi proyecto principal es <strong>Nexus Velocity IA</strong>: una orquestación multiagente con modelos locales (Ollama), n8n y Docker, con control de acceso, aprobaciones humanas firmadas y auditorías.</p>
+<section id="sobre-mi" class="wrap reveal">
+  <h2><small>01</small>Sobre mí</h2>
+  <div class="two">
+    <div>
+      <p>Ingeniero industrial especializado en desarrollo Blockchain, automatización de flujos de trabajo e infraestructura de IA local.</p>
+      <p>Mi enfoque une tecnología de registro distribuido (DLT) con eficiencia financiera en la nube (FinOps), apoyado en una base de Ingeniería Industrial: diseño orquestadores fintech no custodiales, smart contracts en Solidity y sistemas backend automatizados y orientados a eventos.</p>
+      <p>Creador de <strong>Nexus Velocity AI</strong>, una plataforma híbrida de automatización empresarial y FinOps que busca optimizar costes de cómputo en la nube, aplicar gobernanza y llevar la lógica de decisión a entornos self-hosted.</p>
+    </div>
+    <ul class="facts">
+      <li><b>Web3</b><span>Solidity · Ethers.js v6 · Hardhat</span></li>
+      <li><b>11</b><span>agentes en Nexus Velocity IA</span></li>
+      <li><b>ES · EN · DE</b><span>nativo · técnico · intermedio</span></li>
+    </ul>
+  </div>
 </section>
 
-<section id="proyectos" class="reveal">
-  <h2>Proyectos destacados</h2>
+<section id="servicios" class="wrap reveal">
+  <h2><small>02</small>Servicios</h2>
   <div class="grid">
-    <article class="card">
-      <div class="thumb t1" aria-hidden="true">NV</div>
-      <h3>Nexus Velocity IA</h3>
-      <p class="status">Proyecto principal · modo controlado</p>
-      <p>Orquestación de 11 agentes con activación por fases. Incluye una puerta determinista para acciones críticas con aprobación humana firmada (HMAC-SHA256, de un solo uso), n8n en Docker solo en loopback, Cloudflare Access, auditorías documentadas, copias con rollback y pruebas automatizadas.</p>
-      <p class="stack">Ollama · n8n · Docker · Bun/TypeScript · Python</p>
-      <p class="links"><a href="../index.html">Sitio del proyecto</a> · <a href="https://github.com/sdannyandres/nexus-velocity-ia-architecture" rel="noopener">Arquitectura en GitHub</a> · código privado</p>
+    <article class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M4 12h16M4 17h10"/><circle cx="18" cy="7" r="2"/><circle cx="18" cy="17" r="2"/></svg><h3>Automatización de procesos</h3><p>Flujos con n8n, webhooks e integraciones para quitar trabajo manual repetitivo.</p></article>
+    <article class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg><h3>Páginas web y landing pages</h3><p>Sitios rápidos, responsive y claros, listos para publicar.</p></article>
+    <article class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg><h3>IA local y agentes</h3><p>Modelos con Ollama y agentes que corren en tu infraestructura, con tus datos bajo control.</p></article>
+    <article class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg><h3>Web3 y smart contracts</h3><p>Contratos en Solidity para EVM, con pruebas y despliegue en testnet.</p></article>
+    <article class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h18v4H3zM6 15V9h5v6M12 15V6h5v9"/></svg><h3>DevOps y despliegues</h3><p>Docker, Linux y Git: entornos reproducibles y despliegues ordenados.</p></article>
+    <article class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><h3>Consultoría técnica</h3><p>Revisión de arquitectura, seguridad y proceso antes de construir.</p></article>
+  </div>
+</section>
+
+<section id="proyectos" class="wrap reveal">
+  <h2><small>03</small>Proyectos destacados</h2>
+  <div class="grid projects">
+    <article class="card proj">
+      <div class="thumb t1" aria-hidden="true"><span>NV</span></div>
+      <h3>Nexus Velocity IA</h3><p class="status">Proyecto principal · modo controlado</p>
+      <p>Orquestación de 11 agentes con activación por fases. Puerta de acciones críticas sin LLM con aprobación humana firmada (HMAC-SHA256, un solo uso), n8n en Docker, control de acceso, auditorías documentadas y pruebas automatizadas.</p>
+      <ul class="chips sm"><li>Ollama</li><li>n8n</li><li>Docker</li><li>Bun/TypeScript</li><li>Python</li></ul>
+      <p class="links"><a href="https://nexus-velocity-ai.github.io/" rel="noopener">Sitio del proyecto</a> · código privado</p>
     </article>
-    <article class="card">
-      <div class="thumb t2" aria-hidden="true">Ξ</div>
-      <h3>Nexus Web3 Unified Payment</h3>
-      <p class="status">En desarrollo</p>
-      <p>Orquestador de pagos no custodial sobre EVM: ethers.js v6, aritmética BigInt y nodos Geth con consenso Clique PoA privado, más un frontend React + Vite.</p>
-      <p class="stack">Node.js · ethers.js v6 · Geth · React · Vite</p>
+    <article class="card proj">
+      <div class="thumb t2" aria-hidden="true"><span>Ξ</span></div>
+      <h3>Nexus Web3 Unified Payment</h3><p class="status">En desarrollo</p>
+      <p>Orquestador de pagos no custodial sobre EVM con ethers.js v6, aritmética BigInt, nodos Geth con Clique PoA y frontend React + Vite.</p>
+      <ul class="chips sm"><li>Node.js</li><li>ethers.js</li><li>Geth</li><li>React</li></ul>
       <p class="links"><a href="https://github.com/sdannyandres/Nexus-Web3-Unified-Payment" rel="noopener">GitHub</a></p>
     </article>
-    <article class="card">
-      <div class="thumb t3" aria-hidden="true">⛓</div>
-      <h3>private-ethereum-network</h3>
-      <p class="status">Proyecto de aprendizaje</p>
-      <p>Utilidad en Node.js que crea y administra una red Ethereum privada con Geth: génesis, inicialización y arranque de nodos con RPC, HTTP e IPC.</p>
-      <p class="stack">Node.js · Geth · Clique PoA</p>
+    <article class="card proj">
+      <div class="thumb t3" aria-hidden="true"><span>⛓</span></div>
+      <h3>private-ethereum-network</h3><p class="status">Proyecto de aprendizaje</p>
+      <p>Utilidad en Node.js que crea y administra una red Ethereum privada con Geth: génesis, inicialización y arranque de nodos.</p>
+      <ul class="chips sm"><li>Node.js</li><li>Geth</li><li>Clique PoA</li></ul>
       <p class="links"><a href="https://github.com/sdannyandres/private-ethereum-network" rel="noopener">GitHub</a></p>
     </article>
-    <article class="card">
-      <div class="thumb t4" aria-hidden="true">◇</div>
-      <h3>nexus-velocity-ia-architecture</h3>
-      <p class="status">Publicado · solo documentación</p>
+    <article class="card proj">
+      <div class="thumb t4" aria-hidden="true"><span>◇</span></div>
+      <h3>nexus-velocity-ia-architecture</h3><p class="status">Publicado · documentación</p>
       <p>Arquitectura, políticas y diagrama de la orquestación multiagente con aprobación humana. Sin código ni secretos.</p>
-      <p class="stack">Documentación · Mermaid</p>
+      <ul class="chips sm"><li>Arquitectura</li><li>Seguridad</li><li>Mermaid</li></ul>
       <p class="links"><a href="https://github.com/sdannyandres/nexus-velocity-ia-architecture" rel="noopener">GitHub</a></p>
     </article>
-    </div>
-  <p class="note">Otros proyectos personales (escrow de alquiler para Sepolia y registro de aprobaciones on-chain) están en desarrollo y aún sin código público.</p>
+  </div>
 </section>
 
-<section id="experiencia" class="reveal">
-  <h2>Experiencia</h2>
+<section id="experiencia" class="wrap reveal">
+  <h2><small>04</small>Experiencia</h2>
   <ol class="timeline">
-    <li><span class="when">2023 – presente</span><div><h3>Proyectos personales Web3, IA y automatización</h3><p>Nexus Velocity IA, gateway de pagos Web3, escrow y red Ethereum privada. Proyectos propios, no empleo.</p></div></li>
-    <li><span class="when">Nov 2012 – presente</span><div><h3>Responsable de Calidad — GSE Composystem</h3><p>Sistema de calidad EN 9100 / ISO 9001, auditorías internas, KPIs, no conformidades y acciones correctivas para clientes de aeroespacial y defensa.</p></div></li>
-    <li><span class="when">Nov 2010 – 2012</span><div><h3>Responsable de Calidad — Grupo Pintabus</h3><p>Montaje y pintura de piezas aeronáuticas: manual de calidad, planes de calidad y auditorías.</p></div></li>
+    <li><span class="when">Actual</span><div><h3>Nexus Velocity AI — Automatización con IA, agentes y FinOps</h3><p>Plataforma híbrida de automatización y FinOps. Workflows n8n y servicios de agentes en contenedores con PostgreSQL e IA local (Ollama / qwen2.5-coder), con despliegue por fases, aislamiento de entornos y registro de auditoría.</p></div></li>
+    <li><span class="when">Ene 2024 – presente</span><div><h3>Nexus Web3 Unified Payment Gateway — Arquitecto e Infra Lead</h3><p>Gateway fintech no custodial con Ethers.js v6 y JSON-RPC, aritmética BigInt para saldos y entorno Geth privado (Clique PoA) en Docker Compose.</p></div></li>
   </ol>
-  <p class="note">Formación: Máster Blockchain Engineer (CodeCrypto Academy, 2022–2023) · Máster en React (Udemy, 2023) · Grado en Ingeniería Industrial (2017).</p>
+  <p class="note"><b>Formación:</b> Master Blockchain Engineer — CodeCrypto Academy (2022–2023), completado (100%) · Coding Basics — CodeCrypto Academy, certificado (19 nov 2026): Diseño Web, JavaScript, Instalaciones de Software para Desarrollo, Introducción a SQL · Google Cybersecurity Professional Certificate (en curso) · Máster en React (Udemy, 2023) · Grado en Ingeniería Industrial (2017).<br>Formación integral full-stack y blockchain: JavaScript avanzado, TypeScript, Node.js/Express, React, Next.js, SQL, Docker, Kubernetes (Minikube, kubectl, deployments, Ingress), Hyperledger Fabric, Ethereum, Solidity y seguridad de smart contracts.</p>
 </section>
 
-<section id="stack" class="reveal">
-  <h2>Stack</h2>
-  <div class="chips-group"><h3>Blockchain</h3><ul class="chips"><li>Solidity</li><li>EVM</li><li>Hardhat</li><li>ethers.js v6</li><li>ERC-4626</li><li>Geth</li><li>Sepolia</li></ul></div>
-  <div class="chips-group"><h3>Backend y web</h3><ul class="chips"><li>Node.js</li><li>TypeScript</li><li>Python</li><li>APIs REST</li><li>React</li></ul></div>
-  <div class="chips-group"><h3>IA y automatización</h3><ul class="chips"><li>Ollama</li><li>Agentes</li><li>n8n</li><li>Webhooks</li><li>Flujos de trabajo</li></ul></div>
-  <div class="chips-group"><h3>DevOps y seguridad</h3><ul class="chips"><li>Docker</li><li>Docker Compose</li><li>Linux</li><li>Git</li><li>systemd</li><li>Cloudflare</li><li>Auditoría</li></ul></div>
+<section id="stack" class="wrap reveal">
+  <h2><small>05</small>Stack</h2>
+  <div class="stackgrid">
+    <div><h3>Blockchain / EVM</h3><ul class="chips"><li>Solidity</li><li>Ethers.js v6</li><li>Hardhat</li><li>JSON-RPC</li><li>Geth (Clique PoA)</li></ul></div>
+    <div><h3>IA y agentes</h3><ul class="chips"><li>Ollama</li><li>Claude</li><li>qwen2.5-coder</li><li>Agentes</li></ul></div>
+    <div><h3>Backend e infra</h3><ul class="chips"><li>Node.js</li><li>Python</li><li>Express</li><li>PostgreSQL</li><li>Docker</li><li>Docker Compose</li><li>Linux/Ubuntu</li><li>Cloudflare</li></ul></div>
+    <div><h3>Automatización y FinOps</h3><ul class="chips"><li>n8n</li><li>Webhooks</li><li>AWS Cost Explorer</li><li>Boto3</li><li>Optimización de procesos</li></ul></div>
+  </div>
 </section>
 
-<section id="contacto" class="reveal">
-  <h2>Contacto</h2>
-  <p>¿Buscas a alguien para smart contracts, un backend o automatización? Escríbeme.</p>
+</section>
+
+<section id="cv" class="wrap reveal">
+  <h2><small>06</small>CV</h2>
+  <p>Mi CV estará disponible para descarga próximamente.</p>
+  <div class="cta"><span class="btn" aria-disabled="true">CV disponible próximamente</span></div>
+</section>
+
+<section id="trabaja-conmigo" class="wrap reveal">
+  <div class="work">
+    <h2><small>07</small>Trabaja conmigo</h2>
+    <p class="big">¿Necesitas automatizar tu negocio o construir una web?</p>
+    <p>Cuéntame qué quieres resolver y te respondo con una propuesta clara.</p>
+    <form id="mailform" class="form">
+      <label>Nombre<input name="n" required autocomplete="name"></label>
+      <label>Tu correo<input name="e" type="email" required autocomplete="email"></label>
+      <label>¿Qué necesitas?<textarea name="m" rows="4" required></textarea></label>
+      <button class="btn primary" type="submit">Escríbeme</button>
+      <p class="note">Se abre tu cliente de correo con el mensaje preparado. No se envía nada desde esta web.</p>
+    </form>
+  </div>
+</section>
+
+<section id="contacto" class="wrap reveal">
+  <h2><small>08</small>Contacto</h2>
   <ul class="contact">
     <li><a href="mailto:sdannyandres@gmail.com">sdannyandres@gmail.com</a></li>
     <li><a href="https://www.linkedin.com/in/danny-andr%C3%A9s-salazar-blockchain-developer-web3-defi" rel="noopener">LinkedIn</a></li>
@@ -110,7 +159,7 @@
   </ul>
 </section>
 </main>
-<footer><p>© <span id="y"></span> Danny Andrés Salazar</p></footer>
+<footer class="wrap"><p>© <span id="y"></span> Danny Andrés Salazar · <a href="https://nexus-velocity-ai.github.io/" rel="noopener">Nexus Velocity IA</a></p></footer>
 <script src="main.js"></script>
 </body>
 </html>
